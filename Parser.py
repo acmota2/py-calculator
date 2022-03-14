@@ -1,5 +1,6 @@
 from Lexer import tokens
 import ply.yacc as yacc
+import math
 
 # yacc
 def p_expressao_SOMA(p):
@@ -64,6 +65,10 @@ def p_expressao_PARENTESIS(p):
 def p_number_NUMBER(p):
     'num : NUMBER'
     p[0] = p[1]
+
+def p_number_PI(p):
+    'num : PI'
+    p[0] = math.pi
 
 def p_error(p):
     print("Formato de expressão inválido!")

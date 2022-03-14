@@ -10,6 +10,7 @@ tokens = [
     'POTENCIA',
     'RAIZ',
     'FACT',
+    'PI',
     'LPAR',
     'RPAR'
 ]
@@ -57,6 +58,10 @@ def t_LPAR(t):
 
 def t_RPAR(t):
     r'\)'
+    return t
+
+def t_PI(t):
+    r'pi'
     return t
 
 # ignorados

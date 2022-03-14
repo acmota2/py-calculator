@@ -14,9 +14,16 @@ fator       : fator '^' num
             | '!' num
             | num
 num         : NUMBER
+            | PI
             | '(' expressao ')'
-'''
 
+
+Ideias:
+
+Fazer frações literais;
+Fazer raízes literais;
+Pi;
+'''
 import Parser as yacc
 
 def __main__():
