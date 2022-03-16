@@ -9,6 +9,7 @@ tokens = [
     'DIV',
     'POTENCIA',
     'RAIZ',
+    'FRAC',
     'FACT',
     'PI',
     'LPAR',
@@ -16,7 +17,7 @@ tokens = [
 ]
 
 # operadores
-literals = "+-*/^v!()"
+literals = "+-*/^v_!()"
 
 # numeros
 def t_NUMBER(t):
@@ -46,6 +47,10 @@ def t_POTENCIA(t):
 
 def t_RAIZ(t):
     r'v'
+    return t
+
+def t_FRAC(t):
+    r'_'
     return t
 
 def t_FACT(t):

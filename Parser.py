@@ -2,6 +2,10 @@ from Lexer import tokens
 import ply.yacc as yacc
 import math
 
+padding: int = 0 # para acertar contas, isto vai dar trabalho
+
+# pad = lambda x: 1. if x != 0 else x * 10
+
 # yacc
 def p_expressao_SOMA(p):
     'expressao : expressao SOMA termo'
@@ -38,6 +42,10 @@ def p_termo_POTENCIA(p):
 def p_termo_RAIZ(p):
     'fator : num RAIZ fator'
     p[0] = p[3] ** (1./p[1])
+
+def p_termo_FRAC(p):
+    'fator : num FRAC fator'
+    p[0] = p[1] / p[3]
 
 def p_termo_SQRT(p):
     'fator : RAIZ num'

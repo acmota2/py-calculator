@@ -10,6 +10,7 @@ termo       : termo '*' fator
             | fator
 fator       : fator '^' num
             | num 'v' fator
+            | num FRAC fator
             | 'v' num
             | '!' num
             | num
@@ -22,7 +23,6 @@ Ideias:
 
 Fazer frações literais;
 Fazer raízes literais;
-Pi;
 '''
 import Parser as yacc
 
